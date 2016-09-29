@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace VSNancyDemo.Modules
 {
     public class ProductModules : NancyModule
-    {
+    {     
         public static int nProductId = 1;
         public static List<Product> lst = new List<Product>();
+
         public ProductModules() : base("/products")
         {
             Get("/", args => GetProductList());
