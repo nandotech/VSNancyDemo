@@ -21,7 +21,9 @@ namespace VSNancyDemo.Modules
             //};
 
             Get("/", args => "Hello From Home Module.");
+
             Get("/test", args => "Test Message.");
+
             Get("/os", x =>
             {
                 return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
