@@ -13,18 +13,18 @@ namespace VSNancyDemo.Modules
 
         public HomeModule()
         {
-            Before += (ctx) => 
-            {
-                Thread.Sleep(5000);
+            //Before += (ctx) => 
+            //{
+            //    Thread.Sleep(5000);
 
-                return null;
-            };
+            //    return null;
+            //};
 
             Get("/", args => "Hello From Home Module.");
             Get("/test", args => "Test Message.");
             Get("/os", x =>
             {
-                return Environment.GetEnvironmentVariables();
+                return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
             });
         }
     }
