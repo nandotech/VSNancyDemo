@@ -13,12 +13,7 @@ namespace VSNancyDemo.Modules
 
         public HomeModule()
         {
-            //Before += (ctx) => 
-            //{
-            //    Thread.Sleep(5000);
-
-            //    return null;
-            //};
+            //! Build module to accept Vici posts, display stats
 
             Get("/", args => "Hello From Home Module.");
 
