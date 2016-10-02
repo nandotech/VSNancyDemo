@@ -23,6 +23,9 @@ namespace VSNancyDemo.Modules
             {
                 return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
             });
+
+          
+            
         }
     }
 }
