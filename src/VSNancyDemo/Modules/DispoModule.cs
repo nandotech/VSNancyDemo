@@ -11,7 +11,7 @@ namespace VSNancyDemo.Modules
 
         public DispoModule() : base("/dispo")
         {
-            Post("/dispo/{info:string}", args =>
+            Post("/{info:string}", args =>
             {
                 //! Insert args info into database as requested
 
