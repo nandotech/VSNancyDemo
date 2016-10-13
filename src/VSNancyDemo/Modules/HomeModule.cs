@@ -15,7 +15,10 @@ namespace VSNancyDemo.Modules
         {
             //! Build module to accept Vici posts, display stats
 
-            Get("/", args => "Hello From Home Module.");
+            Get("/", args =>
+            {
+                return View["index.html"];
+            });
 
             Get("/test", args => "Test Message.");
 
@@ -24,8 +27,8 @@ namespace VSNancyDemo.Modules
                 return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
             });
 
-          
-            
+
+
         }
     }
 }

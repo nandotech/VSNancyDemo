@@ -65,7 +65,7 @@ namespace VSNancyDemo.Services
                     string sQuery = "DELETE FROM Products"
                                  + " WHERE ProductId = @Id";
                     dbConnection.Open();
-                    dbConnection.Execute(sQuery, new { Id = id });
+                    dbConnection.Execute(sQuery, new { Id = prod });
                 }
             }
 
