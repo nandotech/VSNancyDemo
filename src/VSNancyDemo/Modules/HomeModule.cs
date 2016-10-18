@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using VSNancyDemo.Services;
 
 namespace VSNancyDemo.Modules
 {
     public class HomeModule : NancyModule
     {
-
-        public HomeModule()
+        private IGreeterService _greeter;
+        public HomeModule(IGreeterService greeter)
         {
+            _greeter = greeter;
             //! Build module to accept Vici posts, display stats
 
             Get("/", args =>
@@ -20,7 +22,7 @@ namespace VSNancyDemo.Modules
                 return View["index.html"];
             });
 
-            Get("/test", args => "Test Message.");
+            Get("/test", args => _greeter.GetGreeting());
 
             Get("/os", x =>
             {
