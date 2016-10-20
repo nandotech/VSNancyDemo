@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,9 +15,9 @@ namespace VSNancyDemo.Services
     {
         
             private string connectionString;
-            public DataService()
+            public DataService(IConfiguration config)
             {
-                connectionString = @"Server=localhost;Database=DapperDemo;Trusted_Connection=true;";
+                 connectionString = config.GetConnectionString("DefaultConnection");;
             }
 
             public IDbConnection Connection

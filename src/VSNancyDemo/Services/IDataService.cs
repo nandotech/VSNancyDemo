@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace VSNancyDemo.Services
 {
-    public interface IDataService<TDataType> where TDataType : class
+    public interface IDataService<TDataType> 
+        where TDataType : class
     {
         IEnumerable<TDataType> GetAll();
         TDataType GetById(int id);

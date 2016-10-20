@@ -11,26 +11,21 @@ namespace VSNancyDemo.Modules
 {
     public class HomeModule : NancyModule
     {
-        private IGreeterService _greeter;
         public HomeModule(IGreeterService greeter)
         {
-            _greeter = greeter;
             //! Build module to accept Vici posts, display stats
 
             Get("/", args =>
             {
-                return View["index.html"];
+                return View["index.html", greeter.GetGreeting()];
             });
 
-            Get("/test", args => _greeter.GetGreeting());
+            Get("/test", args => greeter.GetGreeting());
 
             Get("/os", x =>
             {
                 return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
             });
-
-
-
         }
     }
 }

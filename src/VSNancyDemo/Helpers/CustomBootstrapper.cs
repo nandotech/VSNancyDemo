@@ -29,7 +29,6 @@ namespace VSNancyDemo.Helpers
         protected override void ConfigureApplicationContainer(TinyIoCContainer container)
         {
             //base.ConfigureApplicationContainer(container);
-
             container.Register<IGreeterService, GreeterService>();
             container.Register(Configuration);
         }
