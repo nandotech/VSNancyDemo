@@ -12,12 +12,11 @@ namespace VSNancyDemo.Services
 {
     public class DataService<TDataType> : IDataService<TDataType>
         where TDataType : class
-    {
-        
+    {       
             private string connectionString;
             public DataService(IConfiguration config)
             {
-                 connectionString = config.GetConnectionString("DefaultConnection");;
+                 connectionString = config.GetConnectionString("DefaultConnection");
             }
 
             public IDbConnection Connection

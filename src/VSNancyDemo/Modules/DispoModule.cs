@@ -3,15 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VSNancyDemo.Data;
+using VSNancyDemo.Services;
 
 namespace VSNancyDemo.Modules
 {
     public class DispoModule : NancyModule
     {
 
-        public DispoModule() : base("/dispo")
+        public DispoModule(IDataService<Disposition> data) : base("/dispo")
         {
-            Post("/{info:string}", args =>
+            Get("/", args =>
+            {
+                return HttpStatusCode.OK;
+            });
+
+            Post("/{info}", args =>
             {
                 //! Insert args info into database as requested
 

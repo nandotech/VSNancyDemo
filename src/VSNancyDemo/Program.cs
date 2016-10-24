@@ -20,4 +20,4 @@ namespace VSNancyDemo
             host.Run();
         }
     }
-    }
+}

@@ -22,11 +22,9 @@ namespace VSNancyDemo
             // All dependency injection will be done in NancyCustomBootstrapper
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app,
-                              IHostingEnvironment env,
-                              ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app)
         {
-            loggerFactory.AddConsole();
+          //  loggerFactory.AddConsole();
             // Creating our request pipeline--strictly Nancy middleware
             app.UseOwin(x => x.UseNancy());
         }

@@ -17,6 +17,7 @@ namespace VSNancyDemo.Modules
 
             Get("/", args =>
             {
+                
                 return View["index.html", greeter.GetGreeting()];
             });
 

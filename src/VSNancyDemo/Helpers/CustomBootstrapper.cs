@@ -8,6 +8,11 @@ using Nancy.Bootstrapper;
 using VSNancyDemo.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Http;
+using Nancy.Diagnostics;
+using VSNancyDemo.Data;
+using System.Data;
 
 namespace VSNancyDemo.Helpers
 {
@@ -31,6 +36,9 @@ namespace VSNancyDemo.Helpers
             //base.ConfigureApplicationContainer(container);
             container.Register<IGreeterService, GreeterService>();
             container.Register(Configuration);
+            container.Register<IDataService<Sale>, DataService<Sale>>();
+            container.Register<IDataService<Disposition>, DataService<Disposition>>();
         }
+
     }
 }

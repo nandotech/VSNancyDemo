@@ -11,7 +11,7 @@ namespace VSNancyDemo.Modules
         public SaleModule() : base("/sale")
         {
 
-            Post("{info:string}&{info2:string}", args =>
+            Post("{info}&{info2}", args =>
                 {
                     //TODO: Insert sale info from CRM
                     return HttpStatusCode.OK;
