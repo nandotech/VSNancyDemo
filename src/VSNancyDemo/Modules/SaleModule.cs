@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VSNancyDemo.Services;
 
 namespace VSNancyDemo.Modules
 {
     public class SaleModule : NancyModule
     {
-        public SaleModule() : base("/sale")
+        public SaleModule(IDbConnectionProvider _dbConn) 
+            : base("/sale")
         {
 
             Post("{info}&{info2}", args =>

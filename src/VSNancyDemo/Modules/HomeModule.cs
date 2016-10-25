@@ -13,7 +13,6 @@ namespace VSNancyDemo.Modules
     {
         public HomeModule(IGreeterService greeter)
         {
-            //! Build module to accept Vici posts, display stats
 
             Get("/", args =>
             {

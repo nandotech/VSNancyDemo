@@ -11,20 +11,37 @@ namespace VSNancyDemo.Modules
     public class DispoModule : NancyModule
     {
 
-        public DispoModule(IDataService<Disposition> data) : base("/dispo")
+        public DispoModule(IDbConnectionProvider _dbConn)
+            : base("/dispo")
         {
+            var _repo = new DispoRepository(_dbConn);
+
             Get("/", args =>
             {
-                return HttpStatusCode.OK;
+                return _repo.GetAll();
             });
 
-            Post("/{info}", args =>
+            Get("Id={id}", args =>
             {
-                //! Insert args info into database as requested
-
-                return HttpStatusCode.OK;
+                return _repo.Get(args.id);
             });
 
+            Post("/Name={name}&Desc={description}", args =>
+            {
+                var posted = new Disposition();
+                posted.Name = args.Name;
+                posted.Description = args.Description;
+                posted.Timestamp = DateTime.Now;
+                _repo.Add(posted);
+
+                return posted;
+            });
+
+            Delete("Id={id}", args =>
+            {
+                _repo.Remove(args.id);
+                return $"{args.id} Removed";
+            });
         }
 
     }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace VSNancyDemo.Services
 
         public GreeterService(IConfiguration config)
         {
-            _greeting = config["Greeting"];
+                _greeting = config["Greeting"];
         }
 
         public string GetGreeting()

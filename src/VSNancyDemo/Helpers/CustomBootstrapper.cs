@@ -18,10 +18,6 @@ namespace VSNancyDemo.Helpers
 {
     public class CustomBootstrapper : DefaultNancyBootstrapper
     {
-        protected override IRootPathProvider RootPathProvider
-        {
-            get { return new CustomRootPathProvider(); }
-        }
         public IConfiguration Configuration;
         public CustomBootstrapper()
         {
@@ -36,8 +32,9 @@ namespace VSNancyDemo.Helpers
             //base.ConfigureApplicationContainer(container);
             container.Register<IGreeterService, GreeterService>();
             container.Register(Configuration);
-            container.Register<IDataService<Sale>, DataService<Sale>>();
-            container.Register<IDataService<Disposition>, DataService<Disposition>>();
+            container.Register<IDbConnectionProvider, DbConnectionProvider>();
+            //container.Register<IDataService<Sale>, DataService<Sale>>();
+            //container.Register<IDataService<Disposition>, DataService<Disposition>>();
         }
 
     }

@@ -11,7 +11,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{21F99A3D-F163-4CA2-934E-9C9086BCDC15}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
-		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "VSNancyDemo", "src\VSNancyDemo\VSNancyDemo.xproj", "{5E9CDF51-37A4-4971-8095-7CCBC7394A4F}"
