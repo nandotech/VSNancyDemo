@@ -7,6 +7,7 @@ Repo is fairly basic with _HomeModule_ and _DispoModule_ that return a "greeting
 
 * Modules are to Nancy as Controllers are to ASP.NET
 * For more information, [read my blog post on this project](http://blog.nandotech.com/post/2016-10-25-nancyfx-webapi-dapper/)
+* One thing: in latest update I've deleted IDbConnectionProvider, you can kinda skip over that piece and check the sample code here. I think this is much cleaner.
 
 Ready to load and run in Visual Studio with `.sln` file
 
