@@ -1,4 +1,5 @@
-﻿using Nancy;
+﻿using Microsoft.Extensions.Configuration;
+using Nancy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,10 @@ namespace VSNancyDemo.Modules
     public class DispoModule : NancyModule
     {
 
-        public DispoModule(IDbConnectionProvider _dbConn)
+        public DispoModule(IDispoRepository _repo)
             : base("/dispo")
         {
-            var _repo = new DispoRepository(_dbConn);
+           // var _repo = new DispoRepository(_dbConn);
 
             Get("/", args =>
             {

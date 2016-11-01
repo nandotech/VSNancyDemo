@@ -1,20 +1,30 @@
 ﻿using Dapper;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using VSNancyDemo.Data;
 
 namespace VSNancyDemo.Services
 {
-    public class DispoRepository
+    public class DispoRepository : IDispoRepository
     {
-        private IDbConnection dbConn;
-
-        public DispoRepository(IDbConnectionProvider _dbConn)
+        //private IDbConnection dbConn;
+        private string dbConnectionString;
+        public DispoRepository(IConfiguration _dbConn)
         {
-            dbConn = _dbConn.Connection;
+            dbConnectionString = _dbConn.GetConnectionString("DefaultConnection"); ;
+        }
+
+        internal IDbConnection dbConn
+        {
+            get
+            {
+                return new SqlConnection(dbConnectionString);
+            }
         }
         public IEnumerable<Disposition> GetAll()
         {

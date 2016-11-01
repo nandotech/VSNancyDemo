@@ -9,7 +9,7 @@ namespace VSNancyDemo.Modules
 {
     public class SaleModule : NancyModule
     {
-        public SaleModule(IDbConnectionProvider _dbConn) 
+        public SaleModule() 
             : base("/sale")
         {
 

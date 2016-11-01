@@ -18,7 +18,7 @@ namespace VSNancyDemo.Helpers
 {
     public class CustomBootstrapper : DefaultNancyBootstrapper
     {
-        public IConfiguration Configuration;
+        public IConfigurationRoot Configuration;
         public CustomBootstrapper()
         {
             var builder = new ConfigurationBuilder()
@@ -31,10 +31,9 @@ namespace VSNancyDemo.Helpers
         {
             //base.ConfigureApplicationContainer(container);
             container.Register<IGreeterService, GreeterService>();
-            container.Register(Configuration);
-            container.Register<IDbConnectionProvider, DbConnectionProvider>();
-            //container.Register<IDataService<Sale>, DataService<Sale>>();
-            //container.Register<IDataService<Disposition>, DataService<Disposition>>();
+            container.Register<IConfiguration>(Configuration);
+            //container.Register<IDbConnectionProvider, DbConnectionProvider>();
+            container.Register<IDispoRepository, DispoRepository>();
         }
 
     }
