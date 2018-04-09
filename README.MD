@@ -2,6 +2,7 @@
 ## Running on ASP.NET Core (Kestrel) with Dapper for data access
 
 ![Building an Awesome API with .NET Core-Nancy-Dapper](http://blog.nandotech.com/img/nancyhome.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnandotech%2FVSNancyDemo.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnandotech%2FVSNancyDemo?ref=badge_shield)
 
 Repo is fairly basic with _HomeModule_ and _DispoModule_ that return a "greeting" from `appsettings.json` and the other that utilizes [Dapper](https://github.com/stackexchange/dapper-dot-net) for data access, showing how to implement a `POST` that inserts an object to the database and `GET` requests to retrieve data.
 
@@ -37,3 +38,7 @@ Credits to http://talkingdotnet.com's blog post @ http://www.talkingdotnet.com/u
 
 
 Plans to use this alongside some other ASP.NET WebAPI's and perhaps use for some profiling tasks (`EF` vs `Dapper`, `Nancy` vs `ASP.NET` both on Kestrel, etc).
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnandotech%2FVSNancyDemo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnandotech%2FVSNancyDemo?ref=badge_large)
